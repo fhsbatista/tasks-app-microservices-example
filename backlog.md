@@ -1,10 +1,10 @@
--[] Auth API
--[] Register API
--[] TODO APIs
- -[] Create
- -[] Complete
- -[] Uncomplete
- -[] Delete
- -[] Update
- -[] List completed
- -[] List uncompleted
+- [x] Auth API
+- [] Register API
+- [] TODO APIs
+- [] Create
+- [] Complete
+- [] Uncomplete
+- [] Delete
+- [] Update
+- [] List completed
+- [] List uncompleted
