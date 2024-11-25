@@ -6,7 +6,7 @@
 (deftest test-authenticate
   (testing "Returns valid jwt when password is valid"
     (let [secret-key auth.auth/jwt-secret-key
-          token (authenticate "user" "correct-password")
+          token (authenticate "fhsbatista" "123!@#")
           unsigned (jwt/unsign token secret-key)
           unsigned-user (:sub unsigned)]
-      (is (= unsigned-user "user")))))
+      (is (= unsigned-user "fhsbatista")))))
