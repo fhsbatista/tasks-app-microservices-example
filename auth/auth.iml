@@ -17,10 +17,21 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Leiningen: buddy/buddy-core:1.11.423" level="project" />
+    <orderEntry type="library" name="Leiningen: buddy/buddy-sign:3.5.351" level="project" />
+    <orderEntry type="library" name="Leiningen: cheshire:5.11.0" level="project" />
+    <orderEntry type="library" name="Leiningen: com.fasterxml.jackson.core/jackson-core:2.13.3" level="project" />
+    <orderEntry type="library" name="Leiningen: com.fasterxml.jackson.dataformat/jackson-dataformat-cbor:2.13.3" level="project" />
+    <orderEntry type="library" name="Leiningen: com.fasterxml.jackson.dataformat/jackson-dataformat-smile:2.13.3" level="project" />
+    <orderEntry type="library" name="Leiningen: commons-codec:1.16.0" level="project" />
     <orderEntry type="library" name="Leiningen: nrepl:1.0.0" level="project" />
+    <orderEntry type="library" name="Leiningen: org.bouncycastle/bcpkix-jdk18on:1.75" level="project" />
+    <orderEntry type="library" name="Leiningen: org.bouncycastle/bcprov-jdk18on:1.75" level="project" />
+    <orderEntry type="library" name="Leiningen: org.bouncycastle/bcutil-jdk18on:1.75" level="project" />
     <orderEntry type="library" name="Leiningen: org.clojure/clojure:1.11.1" level="project" />
     <orderEntry type="library" name="Leiningen: org.clojure/core.specs.alpha:0.2.62" level="project" />
     <orderEntry type="library" name="Leiningen: org.clojure/spec.alpha:0.3.218" level="project" />
     <orderEntry type="library" name="Leiningen: org.nrepl/incomplete:0.1.0" level="project" />
+    <orderEntry type="library" name="Leiningen: tigris:0.1.2" level="project" />
   </component>
 </module>
