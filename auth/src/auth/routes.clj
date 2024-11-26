@@ -3,7 +3,8 @@
             [io.pedestal.http :as http]
             [io.pedestal.http.body-params :refer [body-params]]
             [clojure.data.json :as json]
-            [auth.auth :as auth]))
+            [auth.auth :as auth]
+            [auth.user :as user]))
 
 (def json-response-interceptor
   {:name  ::json-response
@@ -27,9 +28,18 @@
       {:status 400 :body {:message "Invalid credentials"}}
       {:status 200 :body {:token jwt}})))
 
+(defn create-password [context]
+  (let [params (:json-params context)
+        username (:username params)
+        password (:password params)]
+    (user/set-password username password)
+    {:status 200
+     :body {:message "Password set successfully"}}))
+
 (def routes
   (route/expand-routes
-    #{["/signin" :post [json-response-interceptor (body-params) signin] :route-name :signin]}))
+    #{["/signin" :post [json-response-interceptor (body-params) signin] :route-name :signin]
+      ["/create-password" :post [json-response-interceptor (body-params) create-password] :route-name :create-password]}))
 
 (def service
   {::http/routes routes

@@ -1,6 +1,6 @@
 - [x] Auth API
   - [x] /signin
-  - [ ] /create-user
+  - [x] /create-user
 - [] Register API
   - [x] /register
 - [] TODO APIs

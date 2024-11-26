@@ -13,3 +13,10 @@
         user (ffirst users)]
     {:username (:user/username user)
      :password (:user/password user)}))
+
+(defn set-password [username password]
+  (let [conn (base-db/open-connection!)]
+    (datomic/transact conn [[:db/add
+                             [:user/username username]
+                             :user/password
+                             password]])))
