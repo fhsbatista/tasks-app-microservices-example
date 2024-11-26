@@ -28,7 +28,15 @@
       {:status 400 :body {:message "Invalid credentials"}}
       {:status 200 :body {:token jwt}})))
 
-(defn create-password [context]
+(defn create-user [context]
+  (let [params (:json-params context)
+        username (:username params)
+        password (:password params)]
+    (user/create-user username password)
+    {:status 200
+     :body {:message "User created successfully"}}))
+
+(defn set-password [context]
   (let [params (:json-params context)
         username (:username params)
         password (:password params)]
@@ -39,7 +47,8 @@
 (def routes
   (route/expand-routes
     #{["/signin" :post [json-response-interceptor (body-params) signin] :route-name :signin]
-      ["/create-password" :post [json-response-interceptor (body-params) create-password] :route-name :create-password]}))
+      ["/create-user" :post [json-response-interceptor (body-params) create-user] :route-name :create-user]
+      ["/set-password" :post [json-response-interceptor (body-params) set-password] :route-name :set-password]}))
 
 (def service
   {::http/routes routes

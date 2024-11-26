@@ -14,6 +14,11 @@
     {:username (:user/username user)
      :password (:user/password user)}))
 
+(defn create-user [username password]
+  (let [user {:user/username username
+              :user/password password}]
+    (datomic/transact (base-db/open-connection!) [user])))
+
 (defn set-password [username password]
   (let [conn (base-db/open-connection!)]
     (datomic/transact conn [[:db/add
