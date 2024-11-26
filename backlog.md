@@ -2,7 +2,7 @@
   - [x] /signin
   - [ ] /create-user
 - [] Register API
-  - [] /register
+  - [x] /register
 - [] TODO APIs
 - [] Create
 - [] Complete
