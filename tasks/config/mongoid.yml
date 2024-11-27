@@ -1,0 +1,6 @@
+development:
+  clients:
+    default:
+      database: todo-tasks
+      hosts:
+        - localhost:27017
