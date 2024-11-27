@@ -4,6 +4,7 @@
   - [x] /set-password
 - [x] Register API
   - [x] /register
+  - [] /profile
 - [] TODO APIs
 - [] Create
 - [] Complete
