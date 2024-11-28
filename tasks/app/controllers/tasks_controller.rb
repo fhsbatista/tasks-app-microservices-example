@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  before_action :check_token
   before_action :set_task, only: %i[ show update destroy complete uncomplete]
 
   def index
@@ -54,6 +55,18 @@ class TasksController < ApplicationController
   end
 
   private
+    def check_token
+      token = request.headers['Authorization']
+      begin
+        decoded = JWT.decode(token, Rails.application.credentials.secret_key_jwt)
+        @current_username = decoded[0]['username']
+      rescue JWT::ExpiredSignature => e
+        render json: { error: 'Expired token'}, status: 401
+      rescue JWT::DecodeError => e
+        render json: { error: 'Invalid token'}, status: 401
+      end
+    end
+
     def set_task
       @task = Task.find(params.expect(:id))
     end
