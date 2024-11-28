@@ -10,5 +10,6 @@
                  [io.pedestal/pedestal.route "0.7.1"]
                  [io.pedestal/pedestal.jetty "0.7.1"]
                  [org.slf4j/slf4j-simple "1.7.28"]
-                 [org.clojure/data.json "2.5.0"]]
+                 [org.clojure/data.json "2.5.0"]
+                 [clojure.java-time/clojure.java-time "1.3.0"]]
   :repl-options {:init-ns auth.core})
