@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  todo-tasks-app-db:
+    image: mongo:latest
+    container_name: todo-tasks-mongodb
+    ports:
+     - "27017:27017"
+    volumes:
+     - mongo-data:/data/db
+    restart: unless-stopped
+    environment:
+      - MONGO_INITDB_DATABASE=todo-tasks
+
+  todo-tasks-app:
+    build: .
+    command: bash -c "rm -rf tmp/pids/server.pid && bundle exec rails s -b '0.0.0.0'"
+    volumes:
+      - ".:/todo_tasks"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - todo-tasks-app-db
+
+
+volumes:
+  mongo-data:
+    driver: local
