@@ -14,6 +14,7 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(task_params)
+    @task.username = @current_username
 
     if @task.save
       render json: @task, status: :created, location: @task
